@@ -5,8 +5,7 @@
       <section class="text-center">
         <h1 class="text-5xl font-bold">John Ben C. Uera</h1>
         <p class="text-xl text-gray-400 mt-2">Software Engineer in Schwerin Germany</p>
-        <p class="text-gray-400">dev.jbcu10@gmail.com</p>
- 
+        <p class="text-gray-400">dev.jbcu10@gmail.com | +49 162 6916783</p>
       </section>
 
       <!-- Profile -->
@@ -52,8 +51,7 @@
         <h2 class="text-2xl font-semibold mb-2">Skills</h2>
         <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 list-disc list-inside text-gray-300">
           <li>Vue.js, JavaScript, HTML5, CSS3</li>
-          <li>Node.js, .NET Core, </li>
-          <li>Go, Spring Boot, Flask</li>
+          <li>Node.js, .NET Core, Go, Spring Boot</li>
           <li>Flutter, Android, iOS</li>
           <li>AWS, Azure, GCP, Docker, Kubernetes</li>
           <li>Terraform, Jenkins, Nginx, Git</li>
@@ -106,4 +104,3 @@
     </footer>
   </div>
 </template>
- 
