@@ -3,7 +3,7 @@
     <main class="px-6 py-10 max-w-5xl mx-auto space-y-14">
       <!-- Header -->
       <section class="text-center">
-        <h1 class="text-5xl font-bold">John Ben C. Uera</h1>
+        <h1 class="text-5xl font-bold" id="main-heading">John Ben C. Uera</h1>
         <p class="text-xl text-gray-400 mt-2">Software Engineer in Schwerin Germany</p>
         <p class="text-gray-400">dev.jbcu10@gmail.com | +49 162 6916783</p>
       </section>
