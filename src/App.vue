@@ -94,7 +94,7 @@
         <ul class="space-y-2 text-gray-300">
           <li><a class="underline" href="https://www.linkedin.com/in/john-ben-uera">LinkedIn</a></li>
           <li><a class="underline" href="https://github.com/nebnhoj">GitHub</a></li>
-          <li><a class="underline" href="https://play.google.com/store/apps/developer?id=jb-developer">Play Store</a></li>
+          <li><a class="underline" href="https://play.google.com/store/apps/developer?id=johnben.xyz">Play Store</a></li>
         </ul>
       </section>
     </main>
