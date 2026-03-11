@@ -1,13 +1,8 @@
 <script setup lang="ts">
-interface Props {
-  theme: 'light' | 'dark'
-}
+ 
+ 
 
-defineProps<Props>()
-
-const emit = defineEmits<{
-  (e: 'toggle-theme'): void
-}>()
+ 
 
 const navItems = [
   { label: 'About', href: '#hero' },
@@ -35,9 +30,7 @@ const navItems = [
         </a>
       </nav>
 
-      <button class="rounded-full border-2 border-black bg-black px-4 py-2 text-sm font-bold text-white" type="button" @click="emit('toggle-theme')">
-        {{ theme === 'dark' ? 'Light' : 'Dark' }}
-      </button>
+      
     </div>
   </header>
 </template>
