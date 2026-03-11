@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "about": "Über mich",
+    "experience": "Erfahrung",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt"
+  },
+  "language": {
+    "label": "Sprache",
+    "en": "Englisch",
+    "de": "Deutsch"
+  },
+  "home": {
+    "openToOpportunities": "Offen für neue Möglichkeiten",
+    "viewExperience": "Erfahrung ansehen",
+    "contactMe": "Kontakt aufnehmen",
+    "professionalExperience": "Berufserfahrung",
+    "technicalSkills": "Technische Fähigkeiten",
+    "education": "Ausbildung",
+    "awardsAndCertificates": "Auszeichnungen & Zertifikate",
+    "awards": "Auszeichnungen",
+    "certificates": "Zertifikate",
+    "contact": "Kontakt",
+    "email": "E-Mail",
+    "phone": "Telefon"
+  },
+  "footer": {
+    "builtWith": "Erstellt mit Vue + Vite"
+  }
+}
