@@ -9,6 +9,7 @@
     "preview": "npx nitro dev"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "@vue/server-renderer": "latest",
     "autoprefixer": "latest",
     "daisyui": "latest",
