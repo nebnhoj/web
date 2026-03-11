@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build --outDir dist/client && vite build --ssr src/entry-server.ts --outDir dist/server",
-    "preview": "NODE_ENV=production node server.js"
+    "build": "vue-tsc -b && vite build --outDir dist/client && vite build --ssr src/entry-server.ts --outDir dist/server && nitro build",
+    "preview": "nitro preview"
   },
   "dependencies": {
     "autoprefixer": "latest",
@@ -22,6 +22,7 @@
     "@vitejs/plugin-vue": "latest",
     "typescript": "latest",
     "vite": "latest",
-    "vue-tsc": "latest"
+    "vue-tsc": "latest",
+    "nitropack": "latest"
   }
 }
