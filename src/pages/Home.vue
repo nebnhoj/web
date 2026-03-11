@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 type ExperienceItem = {
   role: string
@@ -33,6 +33,14 @@ type ProfileData = {
 
 const profile = ref<ProfileData | null>(null)
 
+const mailtoLink = computed(() => {
+  if (!profile.value?.email) {
+    return '#'
+  }
+
+  return `mailto:${profile.value.email.trim()}`
+})
+
 onMounted(async () => {
   const response = await fetch('/profile.json')
   profile.value = await response.json()
@@ -52,7 +60,7 @@ onMounted(async () => {
       <p class="mt-6 max-w-3xl text-lg font-medium">{{ profile.profile }}</p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="#experience" class="rounded-full border-2 border-black bg-black px-6 py-3 font-bold text-white">View Experience</a>
-        <a :href="`mailto:${profile.email}`" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">Contact Me</a>
+        <a :href="mailtoLink" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">Contact Me</a>
       </div>
     </section>
 
@@ -109,7 +117,7 @@ onMounted(async () => {
     <section id="contact" class="mx-auto max-w-6xl px-6 pb-24 pt-10">
       <div class="rounded-[2.5rem] border-2 border-black bg-black p-8 text-white">
         <h2 class="text-3xl font-black">Contact</h2>
-        <p class="mt-4 text-lg">Email: <a class="underline" :href="`mailto:${profile.email}`">{{ profile.email }}</a></p>
+        <p class="mt-4 text-lg">Email: <a class="underline" :href="mailtoLink">{{ profile.email }}</a></p>
         <p class="text-lg">Phone: {{ profile.phone }}</p>
         <div class="mt-5 flex flex-wrap gap-3">
           <a :href="profile.links.linkedin" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white px-4 py-2 font-bold">LinkedIn</a>
