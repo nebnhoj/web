@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 type ExperienceItem = {
@@ -33,7 +33,7 @@ type ProfileData = {
 }
 
 const profile = ref<ProfileData | null>(null)
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const mailtoLink = computed(() => {
   if (!profile.value?.email) {
@@ -43,10 +43,19 @@ const mailtoLink = computed(() => {
   return `mailto:${profile.value.email.trim()}`
 })
 
-onMounted(async () => {
-  const response = await fetch('/profile.json')
+const loadProfile = async (activeLocale: string) => {
+  const profilePath = activeLocale === 'de' ? '/profile.de.json' : '/profile.json'
+  const response = await fetch(profilePath)
   profile.value = await response.json()
-})
+}
+
+watch(
+  locale,
+  (activeLocale) => {
+    void loadProfile(activeLocale)
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
