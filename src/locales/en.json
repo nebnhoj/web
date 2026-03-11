@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "de": "German"
+  },
+  "home": {
+    "openToOpportunities": "Open to Opportunities",
+    "viewExperience": "View Experience",
+    "contactMe": "Contact Me",
+    "professionalExperience": "Professional Experience",
+    "technicalSkills": "Technical Skills",
+    "education": "Education",
+    "awardsAndCertificates": "Awards & Certificates",
+    "awards": "Awards",
+    "certificates": "Certificates",
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Phone"
+  },
+  "footer": {
+    "builtWith": "Built with Vue + Vite"
+  }
+}

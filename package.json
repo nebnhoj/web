@@ -17,7 +17,8 @@
     "postcss": "latest",
     "tailwindcss": "latest",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue-i18n": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "latest",

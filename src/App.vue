@@ -2,7 +2,9 @@
  import Navbar from './components/Navbar.vue'
  import { SpeedInsights } from '@vercel/speed-insights/vue'
  import { Analytics } from '@vercel/analytics/vue'
+ import { useI18n } from 'vue-i18n'
  
+const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 </script>
 
@@ -16,7 +18,7 @@ const currentYear = new Date().getFullYear()
     </main>
 
     <footer class="border-t-2 border-black bg-[#cfe5ff] px-6 py-6 text-center text-sm font-semibold">
-      <p>© {{ currentYear }} John Ben C. Uera · Software Engineer · Built with Vue + Vite</p>
+      <p>© {{ currentYear }} John Ben C. Uera · Software Engineer · {{ t('footer.builtWith') }}</p>
     </footer>
     <SpeedInsights />
   </div>
