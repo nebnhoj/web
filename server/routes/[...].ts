@@ -1,6 +1,6 @@
 import { createError, defineEventHandler } from 'h3'
 import { readFile } from 'node:fs/promises'
-import { resolve } from 'node:path'
+import { dirname, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 
 let rendererPromise: Promise<{
@@ -17,10 +17,37 @@ const loadRender = async () => {
 }
 
 const getTemplate = async () => {
-  const templatePaths = [
-    resolve(process.cwd(), '.output/public/index.html'),
-    resolve(process.cwd(), 'dist/client/index.html')
-  ]
+  const searchRoots = new Set<string>()
+
+  let currentDir = process.cwd()
+  while (true) {
+    searchRoots.add(currentDir)
+
+    const parentDir = dirname(currentDir)
+    if (parentDir === currentDir) {
+      break
+    }
+
+    currentDir = parentDir
+  }
+
+  let moduleDir = dirname(new URL(import.meta.url).pathname)
+  while (true) {
+    searchRoots.add(moduleDir)
+
+    const parentDir = dirname(moduleDir)
+    if (parentDir === moduleDir) {
+      break
+    }
+
+    moduleDir = parentDir
+  }
+
+  const templatePaths = Array.from(searchRoots).flatMap((searchRoot) => [
+    resolve(searchRoot, '.output/public/index.html'),
+    resolve(searchRoot, 'public/index.html'),
+    resolve(searchRoot, 'dist/client/index.html')
+  ])
 
   for (const templatePath of templatePaths) {
     try {
