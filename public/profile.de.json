@@ -1,0 +1,161 @@
+{
+  "name": "John Ben C. Uera",
+  "title": "Softwareentwickler",
+  "email": "info@johnben.xyz",
+  "phone": "+49 162 6916783",
+  "location": "Deutschland",
+  "profile": "Hochqualifizierter Softwareentwickler mit über 10 Jahren Erfahrung im Aufbau und in der Wartung komplexer Softwaresysteme. Versiert in verschiedenen Programmiersprachen und Frameworks mit Schwerpunkt auf Backend-Entwicklung, mobiler App-Entwicklung und DevOps. Vertraut mit Agile- und Scrum-Methoden sowie ausgeprägtem analytischem Denken und Problemlösungskompetenz.",
+  "seo": {
+    "siteName": "John Ben C. Uera Portfolio",
+    "title": "John Ben C. Uera | Softwareentwickler-Portfolio",
+    "description": "Portfolio-Website von John Ben C. Uera, einem Softwareentwickler mit über 10 Jahren Erfahrung in Backend-Entwicklung, DevOps, Cloud-Plattformen und Mobile-App-Engineering.",
+    "keywords": [
+      "John Ben C. Uera",
+      "Softwareentwickler",
+      "DevOps Engineer",
+      "Backend-Entwickler",
+      "AWS",
+      "Azure",
+      "GCP",
+      "Spring Boot",
+      "Node.js",
+      "Flutter"
+    ],
+    "canonicalUrl": "https://johnben.xyz"
+  },
+  "experience": [
+    {
+      "role": "Softwareentwickler",
+      "company": "Fuljoyment",
+      "period": "August 2024 - Heute",
+      "highlights": [
+        "APIs für Bestellungen und Produkte für eine Autostore-Maschine mit .NET Core erstellt.",
+        "Kundenrechnungen mit PDFsharp erstellt.",
+        "Eine Attendance-API mit Personio-Integration entwickelt."
+      ]
+    },
+    {
+      "role": "Berater",
+      "company": "StashPH",
+      "period": "Mai 2024 - Dezember 2024",
+      "highlights": [
+        "AWS-Infrastruktur optimiert, um Kosten zu senken und die Servereffizienz zu verbessern.",
+        "Die CI/CD-Pipeline der Plattform für höhere Effizienz und Zuverlässigkeit verbessert.",
+        "Monitoring-Lösungen implementiert, um Observability und operative Stabilität zu erhöhen."
+      ]
+    },
+    {
+      "role": "DevOps",
+      "company": "Accenture",
+      "period": "Dezember 2020 - April 2024",
+      "highlights": [
+        "Cloud-Plattformen (AWS, Azure, GCP) für Provisionierung und optimierte Deployments für ein Conversational-AI-Programm verwaltet.",
+        "Den vollständigen Deployment-Lebenszyklus beim Kunden betreut – von Infrastruktur-Setup und App-Deployment bis zu umfassenden Tests.",
+        "Support für CAIP-Kunden und Offshore-Projekte der Centene Corporation bereitgestellt.",
+        "Produktionssupport für Unified Member View und Softheon geleistet.",
+        "Automatisierungsskripte für SQL-Deployments entwickelt.",
+        "APIs für Dateiverwaltung und PDF-Deployments entwickelt."
+      ]
+    },
+    {
+      "role": "Softwareentwickler",
+      "company": "StashPH",
+      "period": "September 2016 - September 2020",
+      "highlights": [
+        "RESTful APIs für Stash mit Spring Boot entwickelt.",
+        "Eine Spring-MVC-Legacy-Anwendung gewartet und modernisiert.",
+        "Verantwortung für Backend-Engineering und DevOps übernommen.",
+        "Integration mit der PhilHealth-EClaims-API, Drittanbieter-Versicherungs-APIs und Krankenhaus-HIS-Systemen umgesetzt.",
+        "Eine Flutter-Mobile-App für ein Drittanbieter-Versicherungsunternehmen entwickelt.",
+        "RESTful APIs für EMR und ePrescription mit Express.js entwickelt."
+      ]
+    }
+  ],
+  "skills": {
+    "DevOps": [
+      "Kubernetes",
+      "Docker",
+      "Bash-Scripting",
+      "Jenkins",
+      "Git-Repository-Management",
+      "Automatisierung",
+      "Terraform",
+      "Helm",
+      "Nginx",
+      "AWS",
+      "Azure",
+      "GCP"
+    ],
+    "Backend Development": [
+      "Go",
+      "Fiber",
+      "Java",
+      "Spring",
+      "PHP",
+      "Laravel",
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "Python",
+      "Flask",
+      "REST",
+      "SOAP",
+      "GraphQL"
+    ],
+    "Frontend Development": [
+      "JavaScript",
+      "Vue.js",
+      "HTML5",
+      "CSS3"
+    ],
+    "Mobile App Development": [
+      "Android",
+      "iOS",
+      "Flutter"
+    ],
+    "Databases": [
+      "MySQL",
+      "MSSQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Elasticsearch",
+      "Redis"
+    ],
+    "Other": [
+      "Agile",
+      "Scrum",
+      "Analytisches Denken",
+      "Objektorientierte Programmierung",
+      "SOLID-Prinzipien",
+      "MVC-Muster"
+    ],
+    "Industry Experience": [
+      "Gesundheitswesen",
+      "Bildung",
+      "KI",
+      "Fulfillment-Prozesse",
+      "E-Commerce"
+    ]
+  },
+  "education": {
+    "degree": "Bachelor of Science in Informationstechnologie",
+    "school": "AMA Computer College",
+    "period": "Oktober 2009 - Mai 2015"
+  },
+  "awards": [
+    "Android-Development-Speaker für den Abschlussjahrgang 2016 an der Wesleyan University Philippines",
+    "SMART Sweep 2015 Champion – Backend und mobile App für eine Agrarmarketing-Plattform entwickelt",
+    "Best in Programming – Abschluss 2015",
+    "Best in Thesis – Abschluss 2015",
+    "Regional System Engineering Competition Champion 2013"
+  ],
+  "certificates": [
+    "Microsoft Certified Technology Specialist",
+    "NC2 - Computer Hardware and Servicing"
+  ],
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/john-ben-uera",
+    "github": "https://github.com/nebnhoj",
+    "googlePlay": "https://play.google.com/store/apps/developer?id=johnben.xyz"
+  }
+}
