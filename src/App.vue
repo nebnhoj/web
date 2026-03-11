@@ -5,7 +5,9 @@ import Navbar from './components/Navbar.vue'
 const theme = ref<'light' | 'dark'>('light')
 
 const applyTheme = (value: 'light' | 'dark') => {
-  document.documentElement.setAttribute('data-theme', value)
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('data-theme', value)
+  }
 }
 
 const toggleTheme = () => {
@@ -13,7 +15,10 @@ const toggleTheme = () => {
 }
 
 onMounted(() => {
-  const storedTheme = localStorage.getItem('theme')
+  const storedTheme = typeof localStorage !== 'undefined'
+    ? localStorage.getItem('theme')
+    : null
+
   if (storedTheme === 'light' || storedTheme === 'dark') {
     theme.value = storedTheme
   } else {
@@ -25,8 +30,12 @@ onMounted(() => {
 
 watch(theme, (value) => {
   applyTheme(value)
-  localStorage.setItem('theme', value)
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem('theme', value)
+  }
 })
+
+const currentYear = new Date().getFullYear()
 </script>
 
 <template>
@@ -38,7 +47,7 @@ watch(theme, (value) => {
     </main>
 
     <footer class="border-t-2 border-black bg-[#cfe5ff] px-6 py-6 text-center text-sm font-semibold">
-      <p>© {{ new Date().getFullYear() }} John Ben C. Uera · Software Engineer · Built with Vue + Vite</p>
+      <p>© {{ currentYear }} John Ben C. Uera · Software Engineer · Built with Vue + Vite</p>
     </footer>
   </div>
 </template>
