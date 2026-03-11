@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 type ExperienceItem = {
   role: string
@@ -32,6 +33,7 @@ type ProfileData = {
 }
 
 const profile = ref<ProfileData | null>(null)
+const { t } = useI18n()
 
 const mailtoLink = computed(() => {
   if (!profile.value?.email) {
@@ -51,7 +53,7 @@ onMounted(async () => {
   <div v-if="profile" class="relative overflow-hidden">
     <section id="hero" class="mx-auto max-w-6xl px-6 py-16">
       <p class="mb-4 inline-block rounded-full border-2 border-black bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.15em]">
-        {{ profile.location }} · Open to Opportunities
+        {{ profile.location }} · {{ t('home.openToOpportunities') }}
       </p>
       <h1 class="max-w-4xl text-4xl font-black leading-tight sm:text-6xl">
         {{ profile.name }}
@@ -59,13 +61,13 @@ onMounted(async () => {
       <p class="mt-4 text-2xl font-bold">{{ profile.title }}</p>
       <p class="mt-6 max-w-3xl text-lg font-medium">{{ profile.profile }}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#experience" class="rounded-full border-2 border-black bg-black px-6 py-3 font-bold text-white">View Experience</a>
-        <a :href="mailtoLink" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">Contact Me</a>
+        <a href="#experience" class="rounded-full border-2 border-black bg-black px-6 py-3 font-bold text-white">{{ t('home.viewExperience') }}</a>
+        <a :href="mailtoLink" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">{{ t('home.contactMe') }}</a>
       </div>
     </section>
 
     <section id="experience" class="mx-auto max-w-6xl px-6 py-10">
-      <h2 class="text-3xl font-black">Professional Experience</h2>
+      <h2 class="text-3xl font-black">{{ t('home.professionalExperience') }}</h2>
       <div class="mt-6 space-y-5">
         <article v-for="item in profile.experience" :key="`${item.company}-${item.period}`" class="rounded-3xl border-2 border-black bg-white p-6">
           <h3 class="text-xl font-black">{{ item.role }} | {{ item.company }}</h3>
@@ -78,7 +80,7 @@ onMounted(async () => {
     </section>
 
     <section id="skills" class="mx-auto max-w-6xl px-6 py-10">
-      <h2 class="text-3xl font-black">Technical Skills</h2>
+      <h2 class="text-3xl font-black">{{ t('home.technicalSkills') }}</h2>
       <div class="mt-6 grid gap-4 md:grid-cols-2">
         <article v-for="(items, category) in profile.skills" :key="category" class="rounded-3xl border-2 border-black bg-[#cfe5ff] p-5">
           <h3 class="text-lg font-black">{{ category }}</h3>
@@ -88,7 +90,7 @@ onMounted(async () => {
     </section>
 
     <section id="education" class="mx-auto max-w-6xl px-6 py-10">
-      <h2 class="text-3xl font-black">Education</h2>
+      <h2 class="text-3xl font-black">{{ t('home.education') }}</h2>
       <div class="mt-6 rounded-3xl border-2 border-black bg-white p-6">
         <p class="text-xl font-black">{{ profile.education.degree }}</p>
         <p class="font-semibold">{{ profile.education.school }}</p>
@@ -97,16 +99,16 @@ onMounted(async () => {
     </section>
 
     <section id="awards" class="mx-auto max-w-6xl px-6 py-10">
-      <h2 class="text-3xl font-black">Awards & Certificates</h2>
+      <h2 class="text-3xl font-black">{{ t('home.awardsAndCertificates') }}</h2>
       <div class="mt-6 grid gap-4 md:grid-cols-2">
         <article class="rounded-3xl border-2 border-black bg-white p-6">
-          <h3 class="text-lg font-black">Awards</h3>
+          <h3 class="text-lg font-black">{{ t('home.awards') }}</h3>
           <ul class="mt-3 list-disc space-y-2 pl-5">
             <li v-for="award in profile.awards" :key="award" class="font-medium">{{ award }}</li>
           </ul>
         </article>
         <article class="rounded-3xl border-2 border-black bg-white p-6">
-          <h3 class="text-lg font-black">Certificates</h3>
+          <h3 class="text-lg font-black">{{ t('home.certificates') }}</h3>
           <ul class="mt-3 list-disc space-y-2 pl-5">
             <li v-for="certificate in profile.certificates" :key="certificate" class="font-medium">{{ certificate }}</li>
           </ul>
@@ -116,9 +118,9 @@ onMounted(async () => {
 
     <section id="contact" class="mx-auto max-w-6xl px-6 pb-24 pt-10">
       <div class="rounded-[2.5rem] border-2 border-black bg-black p-8 text-white">
-        <h2 class="text-3xl font-black">Contact</h2>
-        <p class="mt-4 text-lg">Email: <a class="underline" :href="mailtoLink">{{ profile.email }}</a></p>
-        <p class="text-lg">Phone: {{ profile.phone }}</p>
+        <h2 class="text-3xl font-black">{{ t('home.contact') }}</h2>
+        <p class="mt-4 text-lg">{{ t('home.email') }}: <a class="underline" :href="mailtoLink">{{ profile.email }}</a></p>
+        <p class="text-lg">{{ t('home.phone') }}: {{ profile.phone }}</p>
         <div class="mt-5 flex flex-wrap gap-3">
           <a :href="profile.links.linkedin" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white px-4 py-2 font-bold">LinkedIn</a>
           <a :href="profile.links.github" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white px-4 py-2 font-bold">GitHub</a>
