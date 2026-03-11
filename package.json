@@ -9,20 +9,21 @@
     "preview": "nitro preview"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
+    "@vue/server-renderer": "latest",
     "autoprefixer": "latest",
     "daisyui": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "vue": "latest",
-    "vue-router": "latest",
-    "@vue/server-renderer": "latest"
+    "vue-router": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "latest",
     "@vitejs/plugin-vue": "latest",
+    "nitropack": "latest",
     "typescript": "latest",
     "vite": "latest",
-    "vue-tsc": "latest",
-    "nitropack": "latest"
+    "vue-tsc": "latest"
   }
 }
