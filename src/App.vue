@@ -17,7 +17,7 @@ onMounted(() => {
   if (storedTheme === 'light' || storedTheme === 'dark') {
     theme.value = storedTheme
   } else {
-    theme.value = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    theme.value = 'light'
   }
 
   applyTheme(theme.value)
@@ -30,15 +30,15 @@ watch(theme, (value) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-base-100 text-base-content">
+  <div id="top" class="min-h-screen bg-[#eaf4ff] text-black">
     <Navbar :theme="theme" @toggle-theme="toggleTheme" />
 
-    <main class="mx-auto max-w-5xl px-6 py-10">
+    <main>
       <router-view />
     </main>
 
-    <footer class="border-t border-base-300 p-6 text-center text-sm text-base-content/70">
-      <p>© 2025 John Ben C. Uera</p>
+    <footer class="border-t-2 border-black bg-[#cfe5ff] px-6 py-6 text-center text-sm font-semibold">
+      <p>Built as a Bubble-style one-pager inspired by Klarna's playful design language.</p>
     </footer>
   </div>
 </template>

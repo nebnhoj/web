@@ -3,30 +3,41 @@ interface Props {
   theme: 'light' | 'dark'
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
+
 const emit = defineEmits<{
   (e: 'toggle-theme'): void
 }>()
+
+const navItems = [
+  { label: 'Story', href: '#story' },
+  { label: 'Features', href: '#features' },
+  { label: 'Roadmap', href: '#roadmap' },
+  { label: 'Contact', href: '#contact' }
+]
 </script>
 
 <template>
-  <div class="navbar border-b border-base-300 bg-base-100 text-base-content">
-    <div class="flex-1">
-      <router-link class="btn btn-ghost text-xl" to="/">John Ben</router-link>
-    </div>
+  <header class="sticky top-0 z-50 border-b border-black/10 bg-[#cfe5ff]/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#top" class="rounded-full border-2 border-black bg-white px-4 py-2 text-sm font-black uppercase tracking-wide">
+        Klarna Bubble
+      </a>
 
-    <div class="flex items-center gap-2">
-      <ul class="menu menu-horizontal px-1">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/experience">Experience</router-link></li>
-        <li><router-link to="/projects">Projects</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
-      </ul>
+      <nav class="hidden gap-2 md:flex">
+        <a
+          v-for="item in navItems"
+          :key="item.href"
+          :href="item.href"
+          class="rounded-full border-2 border-black bg-white px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-1"
+        >
+          {{ item.label }}
+        </a>
+      </nav>
 
-      <button class="btn btn-sm btn-outline" type="button" @click="emit('toggle-theme')">
-        {{ props.theme === 'dark' ? '☀️ Light' : '🌙 Dark' }}
+      <button class="rounded-full border-2 border-black bg-black px-4 py-2 text-sm font-bold text-white" type="button" @click="emit('toggle-theme')">
+        {{ theme === 'dark' ? 'Light' : 'Dark' }}
       </button>
     </div>
-  </div>
+  </header>
 </template>
