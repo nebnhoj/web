@@ -7,16 +7,52 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+.pnpm-store
+
+# Build outputs
 dist
 dist-ssr
+.output
+.nitro
+
+# Vercel
+.vercel
+
+# Vite cache
+node_modules/.vite
+.vite
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Local overrides
 *.local
+
+# TypeScript
+*.tsbuildinfo
+
+# Temporary / cache
+.cache
+tmp
+temp
+
+# Coverage
+coverage
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Misc IDE files
 *.suo
 *.ntvs*
 *.njsproj
