@@ -1,8 +1,7 @@
 <script setup lang="ts">
  import Navbar from './components/Navbar.vue'
  import { SpeedInsights } from '@vercel/speed-insights/vue'
-import Navbar from './components/Navbar.vue'
-import { Analytics } from '@vercel/analytics/vue'
+ import { Analytics } from '@vercel/analytics/vue'
  
 const currentYear = new Date().getFullYear()
 </script>
