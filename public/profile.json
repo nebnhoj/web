@@ -78,7 +78,7 @@
     "Mobile App Development": ["Android", "iOS", "Flutter"],
     "Databases": ["MySQL", "MSSQL", "PostgreSQL", "MongoDB", "Elasticsearch", "Redis"],
     "Other": ["Agile", "Scrum", "Analytical Thinking", "Object-Oriented Programming", "SOLID Principles", "MVC Pattern"],
-    "Industry Experience": ["Health Care", "Education", "AI"]
+    "Industry Experience": ["Health Care", "Education", "AI","Fulfillment Process","E-commerce"]
   },
   "education": {
     "degree": "Bachelor of Science in Information Technology",
