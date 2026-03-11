@@ -1,11 +1,13 @@
 <script setup lang="ts">
- import Navbar from './components/Navbar.vue'
+import Navbar from './components/Navbar.vue'
+import { Analytics } from '@vercel/analytics/vue'
  
 const currentYear = new Date().getFullYear()
 </script>
 
 <template>
   <div id="top" class="min-h-screen bg-[#eaf4ff] text-black">
+    <Analytics />
     <Navbar  />
 
     <main>
