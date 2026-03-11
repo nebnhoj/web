@@ -6,8 +6,8 @@ export default defineNitroConfig({
   compatibilityDate: '2026-03-11',
   publicAssets: [
     {
-      dir: 'dist/client/assets',
-      baseURL: '/assets'
+      dir: 'dist/client',
+      baseURL: '/'
     },
     {
       dir: 'public',

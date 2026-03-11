@@ -1,20 +1,34 @@
 import { createError, defineEventHandler } from 'h3'
 import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import { render } from '../../src/entry-server'
 
 let rendererPromise: Promise<{
   template: string
   render: (url: string) => Promise<{ appHtml: string }>
 }> | null = null
 
+const getTemplate = async () => {
+  const templatePaths = [
+    resolve(process.cwd(), '.output/public/index.html'),
+    resolve(process.cwd(), 'dist/client/index.html')
+  ]
+
+  for (const templatePath of templatePaths) {
+    try {
+      return await readFile(templatePath, 'utf8')
+    } catch {
+      // Continue to the next candidate path.
+    }
+  }
+
+  throw new Error('Unable to locate the SSR HTML template.')
+}
+
 const getRenderer = async () => {
   if (!rendererPromise) {
     rendererPromise = (async () => {
-      const [template, { render }] = await Promise.all([
-        readFile('dist/client/index.html', 'utf8'),
-        import('../../dist/server/entry-server.js') as Promise<{
-          render: (url: string) => Promise<{ appHtml: string }>
-        }>
-      ])
+      const template = await getTemplate()
 
       return { template, render }
     })()
