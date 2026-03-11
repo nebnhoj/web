@@ -1,7 +1,6 @@
-import { defineNitroConfig } from 'nitropack/config'
+import { defineNitroConfig } from 'nitropack'
 
 export default defineNitroConfig({
-  srcDir: 'server',
   preset: 'vercel',
   compatibilityDate: '2026-03-11',
   publicAssets: [

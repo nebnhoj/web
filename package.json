@@ -5,24 +5,24 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build --outDir dist/client && vite build --ssr src/entry-server.ts --outDir dist/server && nitro build",
-    "preview": "nitro preview"
+    "build": "vue-tsc -b && vite build --outDir dist/client && vite build --ssr src/entry-server.ts --outDir dist/server && npx nitro build",
+    "preview": "npx nitro dev"
   },
   "dependencies": {
+    "@vue/server-renderer": "latest",
     "autoprefixer": "latest",
     "daisyui": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "vue": "latest",
-    "vue-router": "latest",
-    "@vue/server-renderer": "latest"
+    "vue-router": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "latest",
     "@vitejs/plugin-vue": "latest",
+    "nitropack": "^2.9.6",
     "typescript": "latest",
     "vite": "latest",
-    "vue-tsc": "latest",
-    "nitropack": "latest"
+    "vue-tsc": "latest"
   }
 }

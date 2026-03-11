@@ -1,0 +1,16 @@
+{
+  "\u0000vite/modulepreload-polyfill.js": [],
+  "index.html": [],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/vue-router/dist/vue-router.mjs": [],
+  "src/App.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/app.ts": [],
+  "src/assets/index.css": [],
+  "src/components/Navbar.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/main.ts": [],
+  "src/pages/Home.vue?vue&type=script&setup=true&lang.ts": [],
+  "src/router.ts": []
+}
