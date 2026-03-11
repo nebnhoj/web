@@ -1,105 +1,121 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
-const scrollY = ref(0)
-
-const onScroll = () => {
-  scrollY.value = window.scrollY
+type ExperienceItem = {
+  role: string
+  company: string
+  period: string
+  highlights: string[]
 }
 
-onMounted(() => {
-  onScroll()
-  window.addEventListener('scroll', onScroll, { passive: true })
+type ProfileData = {
+  name: string
+  title: string
+  email: string
+  phone: string
+  location: string
+  profile: string
+  experience: ExperienceItem[]
+  skills: Record<string, string[]>
+  education: {
+    degree: string
+    school: string
+    period: string
+  }
+  awards: string[]
+  certificates: string[]
+  links: {
+    linkedin: string
+    github: string
+    googlePlay: string
+  }
+}
+
+const profile = ref<ProfileData | null>(null)
+
+onMounted(async () => {
+  const response = await fetch('/profile.json')
+  profile.value = await response.json()
 })
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-})
-
-const heroBubbleStyle = computed(() => ({
-  transform: `translateY(${scrollY.value * 0.18}px)`
-}))
-
-const midBubbleStyle = computed(() => ({
-  transform: `translateY(${scrollY.value * -0.12}px)`
-}))
-
-const floatingCardStyle = computed(() => ({
-  transform: `translateY(${scrollY.value * 0.08}px)`
-}))
-
-const features = [
-  'Playful rounded components and pill-based actions',
-  'High-contrast typography with black-on-blue clarity',
-  'Interactive parallax motion that responds to scrolling'
-]
 </script>
 
 <template>
-  <div class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -left-28 top-20 h-64 w-64 rounded-full bg-[#9fd0ff]" :style="heroBubbleStyle" />
-      <div class="absolute right-0 top-[420px] h-72 w-72 rounded-full bg-[#b8dcff]" :style="midBubbleStyle" />
-      <div class="absolute left-1/2 top-[880px] h-80 w-80 -translate-x-1/2 rounded-full bg-[#7fc1ff] opacity-70" :style="heroBubbleStyle" />
-    </div>
-
-    <section class="relative mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-6 py-16" id="story">
-      <p class="mb-4 inline-block w-fit rounded-full border-2 border-black bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.15em]">
-        One-page experience
+  <div v-if="profile" class="relative overflow-hidden">
+    <section id="hero" class="mx-auto max-w-6xl px-6 py-16">
+      <p class="mb-4 inline-block rounded-full border-2 border-black bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.15em]">
+        {{ profile.location }} · Open to Opportunities
       </p>
-      <h1 class="max-w-4xl text-5xl font-black leading-tight sm:text-7xl">
-        Bubble-inspired website with lively motion and instant personality.
+      <h1 class="max-w-4xl text-4xl font-black leading-tight sm:text-6xl">
+        {{ profile.name }}
       </h1>
-      <p class="mt-6 max-w-2xl text-lg font-medium">
-        This page captures Klarna-style Bubble energy: oversized curves, bold labels, playful blue gradients, and a smooth parallax story from top to bottom.
-      </p>
+      <p class="mt-4 text-2xl font-bold">{{ profile.title }}</p>
+      <p class="mt-6 max-w-3xl text-lg font-medium">{{ profile.profile }}</p>
       <div class="mt-8 flex flex-wrap gap-3">
-        <a href="#features" class="rounded-full border-2 border-black bg-black px-6 py-3 font-bold text-white">See Features</a>
-        <a href="#contact" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">Book a Demo</a>
+        <a href="#experience" class="rounded-full border-2 border-black bg-black px-6 py-3 font-bold text-white">View Experience</a>
+        <a :href="`mailto:${profile.email}`" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">Contact Me</a>
       </div>
     </section>
 
-    <section id="features" class="relative mx-auto max-w-6xl px-6 py-20">
-      <div class="grid gap-6 md:grid-cols-3">
-        <article
-          v-for="feature in features"
-          :key="feature"
-          class="rounded-[2rem] border-2 border-black bg-white p-6 shadow-[6px_6px_0_0_#000]"
-          :style="floatingCardStyle"
-        >
-          <h2 class="mb-3 text-xl font-black">Bubble Feature</h2>
-          <p class="font-medium">{{ feature }}</p>
+    <section id="experience" class="mx-auto max-w-6xl px-6 py-10">
+      <h2 class="text-3xl font-black">Professional Experience</h2>
+      <div class="mt-6 space-y-5">
+        <article v-for="item in profile.experience" :key="`${item.company}-${item.period}`" class="rounded-3xl border-2 border-black bg-white p-6">
+          <h3 class="text-xl font-black">{{ item.role }} | {{ item.company }}</h3>
+          <p class="text-sm font-semibold uppercase tracking-wide">{{ item.period }}</p>
+          <ul class="mt-3 list-disc space-y-2 pl-5">
+            <li v-for="highlight in item.highlights" :key="highlight" class="font-medium">{{ highlight }}</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section id="roadmap" class="relative mx-auto max-w-6xl px-6 py-20">
-      <div class="rounded-[2.5rem] border-2 border-black bg-[#cfe5ff] p-8">
-        <h2 class="text-3xl font-black">Interactive Roadmap</h2>
-        <div class="mt-8 grid gap-4 md:grid-cols-3">
-          <div class="rounded-3xl border-2 border-black bg-white p-5">
-            <p class="text-sm font-black uppercase">Phase 1</p>
-            <p class="mt-2 font-semibold">Brand story and hero animation</p>
-          </div>
-          <div class="rounded-3xl border-2 border-black bg-white p-5">
-            <p class="text-sm font-black uppercase">Phase 2</p>
-            <p class="mt-2 font-semibold">Scroll-based parallax and feature reveals</p>
-          </div>
-          <div class="rounded-3xl border-2 border-black bg-white p-5">
-            <p class="text-sm font-black uppercase">Phase 3</p>
-            <p class="mt-2 font-semibold">Conversion-focused call to action and social links</p>
-          </div>
-        </div>
+    <section id="skills" class="mx-auto max-w-6xl px-6 py-10">
+      <h2 class="text-3xl font-black">Technical Skills</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <article v-for="(items, category) in profile.skills" :key="category" class="rounded-3xl border-2 border-black bg-[#cfe5ff] p-5">
+          <h3 class="text-lg font-black">{{ category }}</h3>
+          <p class="mt-2 font-medium">{{ items.join(', ') }}</p>
+        </article>
       </div>
     </section>
 
-    <section id="contact" class="relative mx-auto max-w-6xl px-6 pb-24 pt-10">
+    <section id="education" class="mx-auto max-w-6xl px-6 py-10">
+      <h2 class="text-3xl font-black">Education</h2>
+      <div class="mt-6 rounded-3xl border-2 border-black bg-white p-6">
+        <p class="text-xl font-black">{{ profile.education.degree }}</p>
+        <p class="font-semibold">{{ profile.education.school }}</p>
+        <p class="text-sm uppercase tracking-wide">{{ profile.education.period }}</p>
+      </div>
+    </section>
+
+    <section id="awards" class="mx-auto max-w-6xl px-6 py-10">
+      <h2 class="text-3xl font-black">Awards & Certificates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <article class="rounded-3xl border-2 border-black bg-white p-6">
+          <h3 class="text-lg font-black">Awards</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-5">
+            <li v-for="award in profile.awards" :key="award" class="font-medium">{{ award }}</li>
+          </ul>
+        </article>
+        <article class="rounded-3xl border-2 border-black bg-white p-6">
+          <h3 class="text-lg font-black">Certificates</h3>
+          <ul class="mt-3 list-disc space-y-2 pl-5">
+            <li v-for="certificate in profile.certificates" :key="certificate" class="font-medium">{{ certificate }}</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-6xl px-6 pb-24 pt-10">
       <div class="rounded-[2.5rem] border-2 border-black bg-black p-8 text-white">
-        <h2 class="text-3xl font-black">Ready to launch your Bubble one-pager?</h2>
-        <p class="mt-4 max-w-2xl text-lg">Let's collaborate and turn your product narrative into a fast, interactive, and memorable website.</p>
-        <a href="mailto:hello@example.com" class="mt-6 inline-block rounded-full border-2 border-white bg-white px-6 py-3 font-black text-black">
-          hello@example.com
-        </a>
+        <h2 class="text-3xl font-black">Contact</h2>
+        <p class="mt-4 text-lg">Email: <a class="underline" :href="`mailto:${profile.email}`">{{ profile.email }}</a></p>
+        <p class="text-lg">Phone: {{ profile.phone }}</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a :href="profile.links.linkedin" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white px-4 py-2 font-bold">LinkedIn</a>
+          <a :href="profile.links.github" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white px-4 py-2 font-bold">GitHub</a>
+          <a :href="profile.links.googlePlay" target="_blank" rel="noopener noreferrer" class="rounded-full border-2 border-white px-4 py-2 font-bold">Google Play</a>
+        </div>
       </div>
     </section>
   </div>

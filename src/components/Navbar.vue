@@ -10,9 +10,9 @@ const emit = defineEmits<{
 }>()
 
 const navItems = [
-  { label: 'Story', href: '#story' },
-  { label: 'Features', href: '#features' },
-  { label: 'Roadmap', href: '#roadmap' },
+  { label: 'About', href: '#hero' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' }
 ]
 </script>
@@ -21,7 +21,7 @@ const navItems = [
   <header class="sticky top-0 z-50 border-b border-black/10 bg-[#cfe5ff]/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a href="#top" class="rounded-full border-2 border-black bg-white px-4 py-2 text-sm font-black uppercase tracking-wide">
-        Klarna Bubble
+        John Ben Uera
       </a>
 
       <nav class="hidden gap-2 md:flex">
