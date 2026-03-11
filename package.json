@@ -4,23 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview"
   },
   "dependencies": {
     "autoprefixer": "latest",
     "daisyui": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "vue": "latest",
-    "vue-router": "latest"
+    "vue": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "latest",
-    "@vitejs/plugin-vue": "latest",
     "typescript": "latest",
-    "vite": "latest",
-    "vue-tsc": "latest"
+    "nuxt": "latest"
   }
 }

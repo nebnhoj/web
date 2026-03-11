@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
-import Navbar from './components/Navbar.vue'
+import Navbar from '~/components/Navbar.vue'
 
 const theme = ref<'light' | 'dark'>('light')
 
@@ -34,7 +34,7 @@ watch(theme, (value) => {
     <Navbar :theme="theme" @toggle-theme="toggleTheme" />
 
     <main>
-      <router-view />
+      <NuxtPage />
     </main>
 
     <footer class="border-t-2 border-black bg-[#cfe5ff] px-6 py-6 text-center text-sm font-semibold">

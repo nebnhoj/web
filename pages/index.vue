@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 
+useSeoMeta({
+  title: 'Klarna Bubble One-Page Experience',
+  description:
+    'SEO-friendly Nuxt one-page site with playful Bubble-inspired visuals, smooth parallax motion, and conversion-focused sections.',
+  ogTitle: 'Klarna Bubble One-Page Experience',
+  ogDescription:
+    'Explore a lively Bubble-inspired one-page website built with Nuxt for better SEO and discoverability.',
+  ogType: 'website'
+})
+
 const scrollY = ref(0)
 
 const onScroll = () => {
@@ -43,7 +53,7 @@ const features = [
       <div class="absolute left-1/2 top-[880px] h-80 w-80 -translate-x-1/2 rounded-full bg-[#7fc1ff] opacity-70" :style="heroBubbleStyle" />
     </div>
 
-    <section class="relative mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-6 py-16" id="story">
+    <section id="story" class="relative mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-6 py-16">
       <p class="mb-4 inline-block w-fit rounded-full border-2 border-black bg-white px-4 py-2 text-xs font-black uppercase tracking-[0.15em]">
         One-page experience
       </p>
