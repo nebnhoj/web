@@ -1,0 +1,104 @@
+{
+  "name": "John Ben C. Uera",
+  "title": "Software Engineer",
+  "email": "dev.jbcu10@gmail.com",
+  "phone": "+49 162 6916783",
+  "location": "Germany",
+  "profile": "Highly skilled software developer with over 10 years of experience building and maintaining complex software systems. Proficient in various programming languages and frameworks with expertise in backend development, mobile app development, and DevOps. Well-versed in Agile and Scrum methodologies and possess strong analytical thinking and problem-solving skills.",
+  "seo": {
+    "siteName": "John Ben C. Uera Portfolio",
+    "title": "John Ben C. Uera | Software Engineer Portfolio",
+    "description": "Portfolio website of John Ben C. Uera, a software engineer with 10+ years of experience in backend development, DevOps, cloud platforms, and mobile app engineering.",
+    "keywords": [
+      "John Ben C. Uera",
+      "Software Engineer",
+      "DevOps Engineer",
+      "Backend Developer",
+      "AWS",
+      "Azure",
+      "GCP",
+      "Spring Boot",
+      "Node.js",
+      "Flutter"
+    ],
+    "canonicalUrl": "https://johnben.xyz"
+  },
+  "experience": [
+    {
+      "role": "Software Engineer",
+      "company": "Fuljoyment",
+      "period": "August 2024 - Present",
+      "highlights": [
+        "Created APIs for Orders and Products for an Autostore machine using .NET Core.",
+        "Created client invoices using PDFsharp.",
+        "Built an Attendance API with Personio integration."
+      ]
+    },
+    {
+      "role": "Consultant",
+      "company": "StashPH",
+      "period": "May 2024 - December 2024",
+      "highlights": [
+        "Optimized AWS infrastructure to reduce costs and improve server efficiency.",
+        "Enhanced the platform CI/CD pipeline for better efficiency and reliability.",
+        "Implemented monitoring solutions to improve observability and operational stability."
+      ]
+    },
+    {
+      "role": "DevOps",
+      "company": "Accenture",
+      "period": "December 2020 - April 2024",
+      "highlights": [
+        "Managed cloud platforms (AWS, Azure, GCP) for provisioning and streamlining deployments for a Conversational AI Program.",
+        "Managed complete client deployment lifecycle from infrastructure setup and app deployment to comprehensive testing.",
+        "Provided support to CAIP clients and offshore Centene Corporation projects.",
+        "Provided production support for Unified Member View and Softheon.",
+        "Developed automation scripts for SQL deployments.",
+        "Developed APIs for file management and PDF deployments."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "company": "StashPH",
+      "period": "September 2016 - September 2020",
+      "highlights": [
+        "Developed RESTful APIs for Stash using Spring Boot.",
+        "Maintained and modernized a Spring MVC legacy application.",
+        "Handled backend engineering and DevOps responsibilities.",
+        "Integrated with PhilHealth EClaims API, third-party insurance APIs, and hospital HIS systems.",
+        "Developed a Flutter mobile app for a third-party insurance company.",
+        "Developed RESTful APIs for EMR and ePrescription using Express.js."
+      ]
+    }
+  ],
+  "skills": {
+    "DevOps": ["Kubernetes", "Docker", "Bash Scripting", "Jenkins", "Git Repository Management", "Automation", "Terraform", "Helm", "Nginx", "AWS", "Azure", "GCP"],
+    "Backend Development": ["Go", "Fiber", "Java", "Spring", "PHP", "Laravel", "Node.js", "Express.js", "NestJS", "Python", "Flask", "REST", "SOAP", "GraphQL"],
+    "Frontend Development": ["JavaScript", "Vue.js", "HTML5", "CSS3"],
+    "Mobile App Development": ["Android", "iOS", "Flutter"],
+    "Databases": ["MySQL", "MSSQL", "PostgreSQL", "MongoDB", "Elasticsearch", "Redis"],
+    "Other": ["Agile", "Scrum", "Analytical Thinking", "Object-Oriented Programming", "SOLID Principles", "MVC Pattern"],
+    "Industry Experience": ["Health Care", "Education", "AI"]
+  },
+  "education": {
+    "degree": "Bachelor of Science in Information Technology",
+    "school": "AMA Computer College",
+    "period": "October 2009 - May 2015"
+  },
+  "awards": [
+    "Android Development Speaker for the Graduating Class of 2016 at Wesleyan University Philippines",
+    "SMART Sweep 2015 Champion - Developed backend and mobile app for an agricultural marketing platform",
+    "Best in Programming - 2015 Graduation",
+    "Best in Thesis - 2015 Graduation",
+    "Regional System Engineering Competition Champion 2013"
+  ],
+  "certificates": [
+    "Microsoft Certified Technology Specialist",
+    "NC2 - Computer Hardware and Servicing"
+  ],
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/john-ben-uera",
+    "github": "https://github.com/nebnhoj",
+    "googlePlay": "https://play.google.com/store/apps/developer?id=jb-developer"
+  }
+}

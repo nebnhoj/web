@@ -38,7 +38,7 @@ watch(theme, (value) => {
     </main>
 
     <footer class="border-t-2 border-black bg-[#cfe5ff] px-6 py-6 text-center text-sm font-semibold">
-      <p>Built as a Bubble-style one-pager inspired by Klarna's playful design language.</p>
+      <p>© {{ new Date().getFullYear() }} John Ben C. Uera · Software Engineer · Built with Vue + Vite</p>
     </footer>
   </div>
 </template>
