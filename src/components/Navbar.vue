@@ -18,9 +18,9 @@ const navItems = [
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 border-b border-black/10 bg-[#cfe5ff]/90 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-base-300 bg-base-100/90 backdrop-blur">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a href="#top" class="rounded-full border-2 border-black bg-white px-4 py-2 text-sm font-black uppercase tracking-wide">
+      <a href="#top" class="rounded-full border border-base-300 bg-base-100 px-4 py-2 text-sm font-black uppercase tracking-wide">
         John Ben Uera
       </a>
 
@@ -29,13 +29,13 @@ const navItems = [
           v-for="item in navItems"
           :key="item.href"
           :href="item.href"
-          class="rounded-full border-2 border-black bg-white px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-1"
+          class="rounded-full border border-base-300 bg-base-100 px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-1"
         >
           {{ item.label }}
         </a>
       </nav>
 
-      <button class="rounded-full border-2 border-black bg-black px-4 py-2 text-sm font-bold text-white" type="button" @click="emit('toggle-theme')">
+      <button class="btn btn-sm" type="button" @click="emit('toggle-theme')">
         {{ theme === 'dark' ? 'Light' : 'Dark' }}
       </button>
     </div>

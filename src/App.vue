@@ -30,14 +30,14 @@ watch(theme, (value) => {
 </script>
 
 <template>
-  <div id="top" class="min-h-screen bg-[#eaf4ff] text-black">
+  <div id="top" class="min-h-screen bg-base-100 text-base-content">
     <Navbar :theme="theme" @toggle-theme="toggleTheme" />
 
     <main>
       <router-view />
     </main>
 
-    <footer class="border-t-2 border-black bg-[#cfe5ff] px-6 py-6 text-center text-sm font-semibold">
+    <footer class="border-t border-base-300 bg-base-200 px-6 py-6 text-center text-sm font-semibold">
       <p>© {{ new Date().getFullYear() }} John Ben C. Uera · Software Engineer · Built with Vue + Vite</p>
     </footer>
   </div>
