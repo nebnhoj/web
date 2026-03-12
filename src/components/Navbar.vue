@@ -8,7 +8,9 @@ const navItems = computed(() => [
   { label: t('nav.about'), href: '#hero' },
   { label: t('nav.experience'), href: '#experience' },
   { label: t('nav.skills'), href: '#skills' },
-  { label: t('nav.contact'), href: '#contact' }
+  { label: t('nav.contact'), href: '#contact' },
+  { label: t('nav.blog'), href: 'https://www.notion.so/JB-s-Blog-0451a703bfae82048db381ba3bdf3101' }
+
 ])
 
 watch(

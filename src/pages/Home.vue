@@ -72,6 +72,8 @@ watch(
       <div class="mt-8 flex flex-wrap gap-3">
         <a href="#experience" class="rounded-full border-2 border-black bg-black px-6 py-3 font-bold text-white">{{ t('home.viewExperience') }}</a>
         <a :href="mailtoLink" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">{{ t('home.contactMe') }}</a>
+        <a href="https://www.notion.so/JB-s-Blog-0451a703bfae82048db381ba3bdf3101" class="rounded-full border-2 border-black bg-white px-6 py-3 font-bold">{{ t('nav.blog') }}</a>
+
       </div>
     </section>
 
