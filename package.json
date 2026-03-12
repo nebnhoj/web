@@ -9,21 +9,21 @@
     "preview": "npx nitro dev"
   },
   "dependencies": {
-    "@vercel/speed-insights": "^2.0.0",
     "@vercel/analytics": "^2.0.0",
+    "@vercel/speed-insights": "^2.0.0",
     "@vue/server-renderer": "latest",
     "autoprefixer": "latest",
     "daisyui": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
     "vue": "latest",
-    "vue-router": "latest",
-    "vue-i18n": "latest"
+    "vue-i18n": "latest",
+    "vue-router": "latest"
   },
   "devDependencies": {
     "@tailwindcss/typography": "latest",
     "@vitejs/plugin-vue": "latest",
-    "nitropack": "^2.9.6",
+    "nitropack": "^0.0.0",
     "typescript": "latest",
     "vite": "latest",
     "vue-tsc": "latest"
