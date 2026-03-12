@@ -14,18 +14,21 @@
     "@vue/server-renderer": "latest",
     "autoprefixer": "latest",
     "daisyui": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "vue": "latest",
     "vue-i18n": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/typography": "latest",
+    "@tailwindcss/vite": "^4.2.1",
     "@vitejs/plugin-vue": "latest",
-    "nitropack": "^0.0.0",
+    "jiti": "^2.6.1",
+    "nitropack": "^2.13.1",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.1",
     "typescript": "latest",
-    "vite": "latest",
+    "vite": "^7.3.1",
     "vue-tsc": "latest"
   }
 }
